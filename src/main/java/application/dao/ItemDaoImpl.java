@@ -1,6 +1,7 @@
 package application.dao;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -25,5 +26,15 @@ public class ItemDaoImpl implements ItemDao {
 		itemRepository.save(item);
 
 	}
-
+	
+	@Override
+	public Item getItem(String itemId) {
+		Optional<Item> opItem = itemRepository.findById(Integer.parseInt(itemId));
+		 return opItem.get();
+	}
+	
+	@Override
+	public void deleteItem(String itemId) {
+		itemRepository.deleteById(Integer.parseInt(itemId));
+	}
 }

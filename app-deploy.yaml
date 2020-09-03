@@ -33,7 +33,7 @@ metadata:
     stack.appsody.dev/id: java-spring-boot2
     stack.appsody.dev/version: 0.3.30
   name: springbootappdemo
-  namespace: tabish-appsody-samples
+  namespace: appsody-samples1
 spec:
   applicationImage: dev.local/springbootappdemo
   createKnativeService: false

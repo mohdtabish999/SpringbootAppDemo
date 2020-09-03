@@ -33,5 +33,18 @@ public class ItemServiceImpl implements ItemService {
 		Item i = new Item(itemBean.getId(), itemBean.getName());
 		itemDao.save(i);
 	}
-
+	
+	@Override
+	public ItemBean getItem(String itemId) {
+		Item item = itemDao.getItem(itemId);
+		ItemBean bean = new ItemBean();
+		bean.setId(item.getId());
+		bean.setName(item.getName());
+		return bean;
+	}
+	
+	@Override
+	public void deleteItem(String itemId) {
+		itemDao.deleteItem(itemId);
+	}
 }

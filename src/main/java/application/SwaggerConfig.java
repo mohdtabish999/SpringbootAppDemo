@@ -24,7 +24,9 @@ public class SwaggerConfig {
 		LOGGER.debug("initializing Swagger Docket...");
 		return new Docket(DocumentationType.SWAGGER_2).select()
 				.apis(RequestHandlerSelectors.basePackage("application.controller"))
-				.paths(PathSelectors.ant("/item")).build().apiInfo(apiInfo());
+				.paths(PathSelectors.any())
+				//.paths(PathSelectors.ant("/item"))
+				.build().apiInfo(apiInfo());
 	}
 
 	/**
